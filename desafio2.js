@@ -22,17 +22,16 @@ Saída: Justino
 const findLongestWord = (string) => {
 
   // Antes é feita uma verificação. Caso a string seja vazia, a função retorna null
-  if (string != " ") {
-
-    // Primeiro é feito um match na string com base no regex abaixo, que retorna apenas as palavras sem números
-    // Em seguida o array criado pelo match é ordenado de forma decrescente de acordo com o tamanho das palavras
-    // Isolamos então o primeiro elemento do array, a palavra mais longa
-    const longestWord = string.match(/[a-zA-Z]+/g).sort((a, b) => b.length - a.length)[0];
-
-    return longestWord;
+  if (string === " ") {
+    return null
   }
-  
-  return null
+
+  // Primeiro é feito um match na string com base no regex abaixo, que retorna apenas as palavras sem números
+  // Em seguida o array criado pelo match é ordenado de forma decrescente de acordo com o tamanho das palavras
+  // Isolamos então o primeiro elemento do array, a palavra mais longa
+  const longestWord = string.match(/[a-zA-Z]+/g).sort((a, b) => b.length - a.length)[0];
+
+  return longestWord;
 }
 
 module.exports = { findLongestWord }

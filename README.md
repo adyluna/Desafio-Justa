@@ -60,7 +60,6 @@ Saída: Justino
 
 ## Palavra mais longa
 
-![longestword](https://user-images.githubusercontent.com/102618043/218203451-e2bc5c2c-1807-463c-9ffe-b8277f24a324.png)
-
+![findLongestWord](https://user-images.githubusercontent.com/102618043/218214736-18c79012-86a3-49b7-b580-2ec4c8268d2a.png)
 
 </details>

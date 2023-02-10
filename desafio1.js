@@ -18,6 +18,9 @@ Saída: 1,9,10
 
 const findIntersections = (arr) => {
 
+  // Antes fazemos uma verificação dos valores do array, para checar se são do tipo String
+  if (typeof arr[0] != "string" || typeof arr[1] != "string") return "Um ou mais elementos não são do tipo String"
+
   // Identificando as strings
   const firstString = arr[0]
     .split(',') // Primeiro separamos os números a partir das vírgulas, transformando a string em um array
@@ -25,7 +28,7 @@ const findIntersections = (arr) => {
   
   const secondString = arr[1].split(',').map(Number);
 
-  // Em seguida é feito um filter com um dos arrays, verificando quais elementos estão presentes em ambos
+  // Em seguida é feito um filter com um dos arrays, verificando quais elementos(e) estão presentes em ambos
   // Caso o primeiro array seja maior que o segundo, usaremos ele como base de comparação no filter
   if (firstString.length > secondString.length) return firstString.filter((e) => secondString.includes(e)).toString();
 

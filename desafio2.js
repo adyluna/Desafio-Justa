@@ -20,35 +20,19 @@ Saída: Justino
 /* SOLUÇÃO */
 
 const findLongestWord = (string) => {
-  // Primeiro transformamos a string em um array de palavras separadas pelos espaços em branco
-  const wordArray = string.split(' ');
 
-  // Criamos uma variável para guardar o valor da maior palavra encontrada até o momento
-  let longestWord = '';
+  // Antes é feita uma verificação. Caso a string seja vazia, a função retorna null
+  if (string != " ") {
 
-  // Em seguida fazemos dois loops
-  // O primeiro loop itera sobre os elementos do array, as palavras
-  for (let i = 0; i < wordArray.length; i ++) {
-    // Criamos uma variável para guardar o valor do comprimento da palavra
-    let wordLength = 0;
+    // Primeiro é feito um match na string com base no regex abaixo, que retorna apenas as palavras sem números
+    // Em seguida o array criado pelo match é ordenado de forma decrescente de acordo com o tamanho das palavras
+    // Isolamos então o primeiro elemento do array, a palavra mais longa
+    const longestWord = string.match(/[a-zA-Z]+/g).sort((a, b) => b.length - a.length)[0];
 
-    // O segundo loop itera sob os caracteres de cada palavra
-    // Caso o caractere seja diferente de um número, é adicionado +1 à variavel criada acima, wordLength
-    for (let j = 0; j < wordArray[i].length; j++) {
-      if (!Number(wordArray[i][j])) {
-        wordLength += 1
-      }
-    }
-
-    // Então comparamos o valor da variável wordLength com o comprimento da atual maior palavra encontrada
-    // Caso wordLength seja maior que a atual maior palavra, então o valor de longestWord é atualizado para wordLength
-    if (wordLength > longestWord.length) {
-      longestWord = wordArray[i]
-    }
+    return longestWord;
   }
-
-  // Por fim retornamos a maior palavra encontrada ao final dos loops
-  return longestWord;
+  
+  return null
 }
 
 module.exports = { findLongestWord }

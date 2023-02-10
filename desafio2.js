@@ -21,7 +21,7 @@ Saída: Justino
 
 const findLongestWord = (string) => {
 
-  // Antes é feita uma verificação. Caso a string seja vazia, a função retorna null
+  // Antes é feita uma verificação. Caso a string esteja vazia, a função retorna null
   if (string === " ") {
     return null
   }
